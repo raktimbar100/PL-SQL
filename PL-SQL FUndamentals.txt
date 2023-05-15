@@ -1,0 +1,182 @@
+///Greater than between 2 numbers
+declare 
+a number;
+b number;
+begin
+a:=&a;
+b:=&b;
+if a>b then 
+ dbms_output.put_line('a is > b '||a);
+else
+ dbms_output.put_line('b is > a '||b);
+end if;
+end;
+/ 
+
+
+///sum of 2 numbers
+
+
+declare 
+a number;
+b number;
+c number;
+begin
+a:=&a;
+b:=&b;
+c:=a+b;
+dbms_output.put_line('Sum is '||c);
+end;
+/
+
+
+///if else ladder
+
+declare 
+marks number;
+grade char(1);
+begin
+marks:=&marks;
+if marks>90 then grade:='O';
+elsif marks>80 then grade:='A';
+elsif marks>75 then grade:='C';
+end if;
+dbms_output.put_line('Grade is '||grade);
+end;
+/
+
+
+///Display even numbers;
+
+declare 
+n number;
+i number;
+begin
+n:=&n;
+for i in 1..n loop
+if mod(i,2)=0 then
+dbms_output.put_line('Even is '||i);
+else
+dbms_output.put_line(' No ');
+end if;
+end loop;
+end;
+/
+
+///factorial
+
+declare 
+n number;
+i number;
+fact number;
+begin
+n:=&n;
+fact:=1;
+for i in 1..n loop
+fact:=fact*i;
+end loop;
+dbms_output.put_line('Factorial of given number is '||fact);
+
+end;
+/
+
+declare 
+a number;
+b number;
+c number;
+n number;
+i number;
+begin
+a:=0;
+b:=1;
+i:=1;
+n:=&n;
+dbms_output.put_line(a);
+dbms_output.put_line(b);
+while i<=n loop
+c:=a+b;
+a:=b;
+b:=c;
+dbms_output.put_line(c);
+i:=i+1;
+end loop;
+end;
+/  
+
+
+///Check Prime
+declare 
+n number;
+i number;
+flag number;
+begin
+flag:=0;
+n:=&n;
+for i in 2..n/2 loop
+if mod(n,i)=0 then
+flag:=1;
+exit;
+end if;
+end loop;
+if flag=1 then
+dbms_output.put_line('Not Prime');
+else
+dbms_output.put_line('Prime');
+end if;
+end;
+/
+
+declare 
+n number;
+count1 number;
+sum1 number;
+remi number;
+begin
+n:=&n;
+sum1:=0;
+count1:=n;
+while n>0 loop
+remi:=mod(n,10);
+sum1:=sum1+remi*remi*remi;
+n:=trunc(n/10);
+end loop;
+if sum1=count1 then
+dbms_output.put_line('Armstrong');
+else
+dbms_output.put_line('Not Armstrong');
+end if;
+end;
+/
+
+
+declare 
+n number;
+count1 number;
+sum1 number;
+remi number;
+begin
+n:=&n;
+sum1:=0;
+count1:=n;
+while n>0 loop
+remi:=mod(n,10);
+sum1:=sum1+remi*remi*remi;
+n:=trunc(n/10);
+end loop;
+
+dbms_output.put_line(n);
+end;
+/
+
+
+declare 
+year number;
+begin
+year:=&year;
+if mod(year,400)=0 or mod(year,4)=0 and mod(year,100)!=0 then
+dbms_output.put_line('Leap Year');
+else
+dbms_output.put_line('Not Leap Year');
+end if;
+end;
+/
